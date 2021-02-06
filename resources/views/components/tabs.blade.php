@@ -1,6 +1,6 @@
 @props([
     'active',
-    'class' => 'border-blue-500'
+    'borderColor' => 'blue-500'
 ])
 
 <div x-data="{
@@ -31,8 +31,8 @@
             <button x-text="tab"
                     type="button"
                     @click="console.log(tab);activeTab = tab; toggleTabs();"
-                    class="-mb-px px-4 rounded-none py-2 text-sm focus:border-none focus:outline-none"
-                    :class="tab === activeTab ? 'border-b-2 {{ $class }}' : 'text-gray-800'"
+                    {{ $attributes->merge(['class' => '-mb-px px-4 rounded-none py-2 text-sm focus:border-none focus:outline-none'])}}
+                    :class="tab === activeTab ? 'border-b-2 border-{{ $borderColor }}' : 'text-gray-800'"
                     :id="`tab-${index + 1}`"
                     role="tab"
                     :aria-selected="(tab === activeTab).toString()"

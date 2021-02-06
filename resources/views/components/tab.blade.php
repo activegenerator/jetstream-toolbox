@@ -13,6 +13,7 @@
      role="tabpanel"
      :aria-labelledby="`tab-${id}`"
      :id="`tab-panel-${id}`"
+     {{ $attributes }}
 >
     {{ $slot }}
 </div>
