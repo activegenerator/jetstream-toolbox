@@ -7,4 +7,9 @@
     <tbody>
         {{ $body }}
     </tbody>
+    @if(isset($foot))
+    <tfoot>
+        {{ $foot }}
+    </tfoot>
+    @endif
 </table>

@@ -1,6 +1,6 @@
 @props(['label' => ''])
 
-<div x-data="{ open: false }" class="relative inline-block text-left z-10 text-sm">
+<div x-data="{ open: false }" class="relative inline-block text-left z-10 text-sm"  {{ $attributes }}>
     <button @click="open = true"
         style="min-width: 150px;"
         class="flex p-2.5 bg-white border-gray-300 border focus:outline-none focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm w-full"

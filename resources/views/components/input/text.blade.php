@@ -2,7 +2,7 @@
     'prefix' => null,
     'suffix' => null,
     'type' => 'text',
-    'full' => ''
+    'full' => '',
 ])
 
 <div {{ $attributes->merge(['class' => 'relative border border-gray-300  rounded-md shadow-sm block'])->only('class') }}>
