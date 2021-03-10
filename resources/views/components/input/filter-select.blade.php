@@ -1,5 +1,6 @@
 @props([
-    'showSearch' => true
+    'showSearch' => true,
+    'showSelectAll' => true,
 ])
 
 <div wire:ignore.self x-data="selectBox({
@@ -9,12 +10,14 @@
     <x-box::input.text x-ref="search" x-model="search" type="text" class="block w-full mb-2" placeholder="{{ __('Search..') }}" />
     @endif
 
+    @if($showSelectAll)
     <template x-if="Array.isArray(selected)">
         <div class="flex px-1">
-        	<button x-on:click.prevent="selectAll">{{ __('Select all') }}</button>
+            <button x-on:click.prevent="selectAll">{{ __('Select all') }}</button>
         	<button class="ml-auto" x-on:click.prevent="unselectAll">{{ __('Unselect all') }}</button>
         </div>
     </template>
+    @endif
 
     <div x-ref="slot" class="max-h-28 overflow-y-auto w-full p-1.5 rounded">
         {{ $slot }}
